@@ -14,12 +14,15 @@ nextflow_pipeline {
         }
 
         then {
-            assert snapshot(
-                path("${outputDir}")
-                    .list()
-                    .collect { getRecursiveFileNames(it, outputDir) }
-                    .flatten()
-            ).match("relative paths")
+            assertAll(
+                { assert workflow.success },
+                { assert snapshot(
+                    path("${outputDir}")
+                        .list()
+                        .collect { getRecursiveFileNames(it, outputDir) }
+                        .flatten()
+                ).match("relative paths") }
+            )
         }
 
     }

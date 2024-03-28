@@ -1,0 +1,25 @@
+{
+    "no md5sum": {
+        "content": [
+            [
+                [
+                    {
+                        "id": "ipsum"
+                    },
+                    "ipsum_uppercase.txt"
+                ],
+                [
+                    {
+                        "id": "lorem"
+                    },
+                    "lorem_uppercase.txt"
+                ]
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.8.4",
+            "nextflow": "24.02.0"
+        },
+        "timestamp": "2024-03-28T11:05:24.091911702"
+    }
+}

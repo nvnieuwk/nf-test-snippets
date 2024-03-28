@@ -1,0 +1,36 @@
+nextflow_process {
+
+    name "Output everything from the process/workflow without checking md5sum of the files"
+    script "modules/uppercase/main.nf"
+    process "UPPERCASE"
+
+    tag "no_md5sum"
+
+    test("Output everything from the process/workflow without checking md5sum of the files") {
+
+        when {
+            process {
+                """
+                input[0] = Channel.of([
+                    [id:"lorem"],
+                    file("../../../data/lorem.txt", checkIfExists:true)
+                ],[
+                    [id:"ipsum"],
+                    file("../../../data/ipsum.txt", checkIfExists:true)
+                ])
+                """
+            }
+        }
+
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(
+                    process.out.uppercase.collect { it.collect { it instanceof String && file(it).exists() ? file(it).name : it }}
+                ).match("no md5sum") }
+            )
+        }
+
+    }
+
+}

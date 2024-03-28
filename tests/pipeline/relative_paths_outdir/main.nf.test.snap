@@ -1,0 +1,35 @@
+{
+    "relative paths": {
+        "content": [
+            [
+                "split/loremaa.txt",
+                "split/loremab.txt",
+                "split/loremac.txt",
+                "split/loremad.txt",
+                "split/loremae.txt",
+                "split/loremaf.txt",
+                "split/loremag.txt",
+                "split/loremah.txt",
+                "split/loremai.txt",
+                "split/loremaj.txt",
+                "split/loremak.txt",
+                "split/sub_folder/loremaa.txt",
+                "split/sub_folder/loremab.txt",
+                "split/sub_folder/loremac.txt",
+                "split/sub_folder/loremad.txt",
+                "split/sub_folder/loremae.txt",
+                "split/sub_folder/loremaf.txt",
+                "split/sub_folder/loremag.txt",
+                "split/sub_folder/loremah.txt",
+                "split/sub_folder/loremai.txt",
+                "split/sub_folder/loremaj.txt",
+                "split/sub_folder/loremak.txt"
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.8.4",
+            "nextflow": "24.02.0"
+        },
+        "timestamp": "2024-03-28T10:07:37.027816463"
+    }
+}

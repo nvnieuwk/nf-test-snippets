@@ -1,0 +1,35 @@
+nextflow_pipeline {
+
+    name "Get all relative paths of the output directory without checking md5sums"
+    script "main.nf"
+
+    tag "relative_paths"
+
+    test("Get all relative paths of the output directory without checking md5sums") {
+
+        when {
+            params {
+                outdir = outputDir
+            }
+        }
+
+        then {
+            assert snapshot(
+                path("${outputDir}")
+                    .list()
+                    .collect { getRecursiveFileNames(it, outputDir) }
+                    .flatten()
+            ).match("relative paths")
+        }
+
+    }
+
+}
+
+def getRecursiveFileNames(fileOrDir, outputDir) {
+    if(file(fileOrDir.toString()).isDirectory()) {
+        return fileOrDir.list().collect { getRecursiveFileNames(it, outputDir) }
+    }
+    return fileOrDir.toString().replace("${outputDir}/", "")
+}
+

@@ -4,7 +4,7 @@ nextflow_process {
     script "modules/uppercase/main.nf"
     process "UPPERCASE"
 
-    tag "no_md5sum"
+    tag "no_md5sum_exist"
 
     test("Output everything from the process/workflow without checking md5sum of the files") {
 

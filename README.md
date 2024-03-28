@@ -9,4 +9,5 @@ Each test folder contains a snapshot where you can see the result of the test sn
 
 ## Process/workflow tests
 
-1. [Output everything from the process/workflow without checking md5sum of the files](tests/process/no_md5sum/main.nf.test)
+1. [Output everything from the process/workflow without checking md5sum of the files - only check existence](tests/process/no_md5sum_exist/main.nf.test)
+1. [Output everything from the process/workflow without checking md5sum of the files - only check existence](tests/process/no_md5sum_content/main.nf.test)
